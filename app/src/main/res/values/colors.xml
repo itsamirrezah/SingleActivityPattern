@@ -3,4 +3,14 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
+    <color name="cy_overlay">#E600838F</color>
+    <color name="grey">#e6e6e6</color>
+    <color name="blue">#1976D2</color>
+    <color name="overlay_dark">#4D000000</color>
+    <color name="light_blue">#0091EA</color>
+    <color name="light2_blue">#4FC3F7</color>
+    <color name="cyan_dark">#00838F</color>
+
+
+
 </resources>
