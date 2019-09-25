@@ -48,7 +48,7 @@
                     android:id="@+id/tvPassword"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="password: "
+                    android:text="NY"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                     android:textColor="@color/colorPrimaryDark" />
             </LinearLayout>
