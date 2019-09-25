@@ -20,9 +20,6 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
  */
 public class FragA extends Fragment {
 
-    FloatingActionButton fabLogin;
-    EditText etUsername, etPassword;
-
     public FragA() {
         // Required empty public constructor
     }
@@ -33,10 +30,6 @@ public class FragA extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_frag_a, container, false);
-        fabLogin = view.findViewById(R.id.fabLogin);
-        etUsername = view.findViewById(R.id.etUsername);
-        etPassword = view.findViewById(R.id.etPassword);
-
         return view;
     }
 
@@ -44,16 +37,5 @@ public class FragA extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        fabLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                FragADirections.ActionNavigateToFragmentB action = FragADirections
-                        .actionNavigateToFragmentB(
-                                etUsername.getText().toString(),
-                                etPassword.getText().toString());
-
-                Navigation.findNavController(v).navigate(action);
-            }
-        });
     }
 }
