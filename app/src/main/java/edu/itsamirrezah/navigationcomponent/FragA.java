@@ -2,16 +2,17 @@ package edu.itsamirrezah.navigationcomponent;
 
 
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.EditText;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Button;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 
 /**
@@ -19,7 +20,9 @@ import android.widget.Button;
  */
 public class FragA extends Fragment {
 
-    Button btnNavigate;
+    FloatingActionButton fabLogin;
+    EditText etUsername, etPassword;
+
     public FragA() {
         // Required empty public constructor
     }
@@ -29,18 +32,27 @@ public class FragA extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_frag_a, container, false);
+        View view = inflater.inflate(R.layout.fragment_frag_a, container, false);
+        fabLogin = view.findViewById(R.id.fabLogin);
+        etUsername = view.findViewById(R.id.etUsername);
+        etPassword = view.findViewById(R.id.etPassword);
+
+        return view;
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        btnNavigate = view.findViewById(R.id.btn_navigate_to_fragmentB);
 
-        btnNavigate.setOnClickListener(new View.OnClickListener() {
+        fabLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Navigation.findNavController(v).navigate(R.id.action_navigate_to_fragmentB);
+                FragADirections.ActionNavigateToFragmentB action =
+                        FragADirections.actionNavigateToFragmentB(
+                                etUsername.getText().toString(),
+                                etPassword.getText().toString()
+                        );
+                Navigation.findNavController(v).navigate(action);
             }
         });
     }
