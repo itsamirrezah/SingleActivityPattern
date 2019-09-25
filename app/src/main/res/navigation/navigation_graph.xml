@@ -3,16 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation_graph"
-    app:startDestination="@id/nav_fragA">
+    app:startDestination="@id/nav_fragB">
 
     <fragment
         android:id="@+id/nav_fragA"
         android:name="edu.itsamirrezah.navigationcomponent.FragA"
         android:label="fragment_frag_a"
         tools:layout="@layout/fragment_frag_a">
-        <action
-            android:id="@+id/action_navigate_to_fragmentB"
-            app:destination="@id/nav_fragB"></action>
     </fragment>
 
     <fragment
@@ -20,11 +17,10 @@
         android:name="edu.itsamirrezah.navigationcomponent.FragB"
         android:label="fragment_frag_b"
         tools:layout="@layout/fragment_frag_b">
-        <argument
-            android:name="username"
-            app:argType="string" />
-        <argument
-            android:name="password"
-            app:argType="string" />
     </fragment>
+    <fragment
+        android:id="@+id/nav_fragC"
+        android:name="edu.itsamirrezah.navigationcomponent.FragC"
+        android:label="fragment_frag_c"
+        tools:layout="@layout/fragment_frag_c" />
 </navigation>
