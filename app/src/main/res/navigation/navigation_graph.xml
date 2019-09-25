@@ -12,15 +12,19 @@
         tools:layout="@layout/fragment_frag_a">
         <action
             android:id="@+id/action_navigate_to_fragmentB"
-            app:destination="@id/nav_fragB"
-            app:enterAnim="@anim/nav_default_enter_anim"
-            app:exitAnim="@anim/nav_default_exit_anim">
-        </action>
+            app:destination="@id/nav_fragB"></action>
     </fragment>
 
     <fragment
         android:id="@+id/nav_fragB"
         android:name="edu.itsamirrezah.navigationcomponent.FragB"
         android:label="fragment_frag_b"
-        tools:layout="@layout/fragment_frag_b" />
+        tools:layout="@layout/fragment_frag_b">
+        <argument
+            android:name="username"
+            app:argType="string" />
+        <argument
+            android:name="password"
+            app:argType="string" />
+    </fragment>
 </navigation>
